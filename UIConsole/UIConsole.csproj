@@ -63,6 +63,10 @@
     <Compile Include="Migrations\202007131622479_AdicionarCategoria.designer.cs">
       <DependentUpon>202007131622479_AdicionarCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007131706310_RefatorandoCategoria.cs" />
+    <Compile Include="Migrations\202007131706310_RefatorandoCategoria.designer.cs">
+      <DependentUpon>202007131706310_RefatorandoCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="ProdutoAplicacao.cs" />
@@ -79,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007131622479_AdicionarCategoria.resx">
       <DependentUpon>202007131622479_AdicionarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007131706310_RefatorandoCategoria.resx">
+      <DependentUpon>202007131706310_RefatorandoCategoria.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

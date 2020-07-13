@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace UIConsole
 
         public IEnumerable<Produto> Listar()
         {
-            return conexaoBd.Produtos.ToList();
+            return conexaoBd.Produtos.Include(x => x.Categoria).ToList();
         }
 
         public void Alterar(Produto produto)
