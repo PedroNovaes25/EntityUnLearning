@@ -13,7 +13,8 @@ namespace UIConsole
             //DbProdutoContext banco = new DbProdutoContext();
             Produto produt1 = new Produto();
             //produt1.Id = 4;
-            produt1.Nome = "Arroz";
+            produt1.Nome = "Oleo de soja";
+            produt1.Categoria = "Enlatados";
 
             //banco.Produtos.Add(produt1);
             //banco.SaveChanges();

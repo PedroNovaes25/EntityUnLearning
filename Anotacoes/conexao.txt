@@ -1,0 +1,19 @@
+Criar as classes
+Baixar o entity <Install-Package entityframework>
+Fazer a conexao com o banco 
+(((( - <connectionStrings>
+		<add name = "DbProdutoContext" connectionString="data source=(localdb)\mssqllocaldb; Integrated Security=SSPI;Initial Catalog=DbProdutoContext"
+			 providerName="System.Data.sqlClient"/>
+	</connectionStrings> 
+- ))))
+
+Usando Migrations: Enable Migrations
+Adicionando uma migração: Add-Migration "NomeDaMigracao" OBS: As mudanças não foram 
+enviandas ao BD ainda.
+
+Enviar as Mudanças ao BD: Update-Database
+
+Gerando um script : Update-Databse -Script -SourceMigration:$InitialDatabase -TargetMigration: NomeDaMigração   Obs:(Inicio e fim da migração)
+
+Reverter para uma migração : Update-Database -TargetMigration:"NomeDaMigracao"
+

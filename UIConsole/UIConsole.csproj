@@ -53,7 +53,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categoria.cs" />
     <Compile Include="DbProdutoContext.cs" />
+    <Compile Include="Migrations\202007091443543_InitialCreate.cs" />
+    <Compile Include="Migrations\202007091443543_InitialCreate.designer.cs">
+      <DependentUpon>202007091443543_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007131622479_AdicionarCategoria.cs" />
+    <Compile Include="Migrations\202007131622479_AdicionarCategoria.designer.cs">
+      <DependentUpon>202007131622479_AdicionarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="ProdutoAplicacao.cs" />
     <Compile Include="Program.cs" />
@@ -62,6 +72,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202007091443543_InitialCreate.resx">
+      <DependentUpon>202007091443543_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007131622479_AdicionarCategoria.resx">
+      <DependentUpon>202007131622479_AdicionarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
