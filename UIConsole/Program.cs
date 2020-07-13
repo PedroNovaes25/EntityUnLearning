@@ -12,9 +12,12 @@ namespace UIConsole
         {
             //DbProdutoContext banco = new DbProdutoContext();
             Produto produt1 = new Produto();
-            //produt1.Id = 4;
-            produt1.Nome = "Oleo de soja";
-            //produt1.Categoria = "Enlatados";
+            Categoria cat1 = new Categoria();
+            //cat1.Descricao = "Bebida";
+
+            //produt1.Nome = "Oleo de soja";
+            //produt1.Id
+            cat1.Descricao = "Limpeza   ";
 
             //banco.Produtos.Add(produt1);
             //banco.SaveChanges();
@@ -22,10 +25,21 @@ namespace UIConsole
 
             //List<Produto> produtosBanco = banco.Produtos.ToList();
 
-            ProdutoAplicacao bancoConec = new ProdutoAplicacao();
+            CategoriaAplicacao bancoCat = new CategoriaAplicacao();
+            ProdutoAplicacao bancoProd = new ProdutoAplicacao();
+            //bancoCat.Salvar(cat1);
+            produt1.Nome = "Detergente";
+            //produt1.Id = 9;
+            produt1.Categoria = bancoCat.Listar().Where(x => x.Id == 7).FirstOrDefault();
+
             //bancoConec.Salvar(produt1);
             //bancoConec.Alterar(produt1);
             //bancoConec.Excluir(produt1.Id);
+            //bancoCat.Salvar(cat1);
+            bancoProd.Salvar(produt1);
+
+
+
 
 
             //var teste = produtosBanco.First().Id;
@@ -49,9 +63,14 @@ namespace UIConsole
 
             #endregion
 
-            foreach (var item2 in bancoConec.Listar())
+            foreach (var item2 in bancoCat.Listar())
             {
-                Console.WriteLine(item2.Id + " - " + item2.Nome);
+                //Console.WriteLine( item2.Id + " - "+  item2.Descricao);
+            }
+
+            foreach (var item2 in bancoProd.Listar())
+            {
+                Console.WriteLine(item2.Id + " " + item2.Nome + " - " + item2.Categoria.Descricao);
             }
         }
     }

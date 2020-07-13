@@ -18,6 +18,7 @@ namespace UIConsole
 
         public void Salvar(Produto produto)
         {
+            produto.Categoria = conexaoBd.Categorias.ToList().Where(x => x.Id == produto.Categoria.Id).FirstOrDefault();
             conexaoBd.Produtos.Add(produto);
             conexaoBd.SaveChanges();
         }

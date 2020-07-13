@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categoria.cs" />
+    <Compile Include="CategoriaAplicacao.cs" />
     <Compile Include="DbProdutoContext.cs" />
     <Compile Include="Migrations\202007091443543_InitialCreate.cs" />
     <Compile Include="Migrations\202007091443543_InitialCreate.designer.cs">
