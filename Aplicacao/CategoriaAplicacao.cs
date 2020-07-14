@@ -1,21 +1,23 @@
-﻿using System;
+﻿using Repositorio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UIConsole;
 
-namespace UIConsole
+namespace Aplicacao
 {
     public class CategoriaAplicacao
     {
         DbProdutoContext conexaoBd { get; set; }
 
-        public CategoriaAplicacao() 
+        public CategoriaAplicacao()
         {
             conexaoBd = new DbProdutoContext();
         }
 
-        public void Salvar(Categoria categoria) 
+        public void Salvar(Categoria categoria)
         {
             conexaoBd.Categorias.Add(categoria);
             conexaoBd.SaveChanges();

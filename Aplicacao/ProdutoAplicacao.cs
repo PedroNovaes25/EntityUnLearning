@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Repositorio;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UIConsole;
 
-namespace UIConsole
+namespace Aplicacao
 {
     public class ProdutoAplicacao
     {

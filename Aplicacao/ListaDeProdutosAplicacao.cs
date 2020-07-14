@@ -4,21 +4,23 @@ using System.Linq;
 using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
+using UIConsole;
+using Repositorio;
 
-namespace UIConsole
+namespace Aplicacao
 {
     public class ListaDeProdutosAplicacao
     {
         DbProdutoContext conexaoBd { get; set; }
 
-        public ListaDeProdutosAplicacao() 
+        public ListaDeProdutosAplicacao()
         {
             conexaoBd = new DbProdutoContext();
         }
 
         public void Salvar(ListaDeProduto listaDeProduto)
         {
-            listaDeProduto.Produtos = 
+            listaDeProduto.Produtos =
                 listaDeProduto.Produtos.Select(prod => conexaoBd.Produtos.FirstOrDefault(x => x.Id == prod.Id)).ToList();
             conexaoBd.ListaDeProdutos.Add(listaDeProduto);
             conexaoBd.SaveChanges();
@@ -31,7 +33,7 @@ namespace UIConsole
                 .Include(x => x.Produtos.Select(c => c.Categoria))
                 .ToList();
         }
-        public void Alterar(ListaDeProduto listaDeProduto) 
+        public void Alterar(ListaDeProduto listaDeProduto)
         {
             ListaDeProduto listaProduto = conexaoBd.ListaDeProdutos.Where(x => x.Id == listaDeProduto.Id).First();
             listaProduto.Produtos =
@@ -39,7 +41,7 @@ namespace UIConsole
             listaProduto.Descricao = listaDeProduto.Descricao;
             conexaoBd.SaveChanges();
         }
-        public void Excluir(int idLista) 
+        public void Excluir(int idLista)
         {
             ListaDeProduto listaExcluir = conexaoBd.ListaDeProdutos.Where(x => x.Id == idLista).First();
             listaExcluir.Produtos = null;
