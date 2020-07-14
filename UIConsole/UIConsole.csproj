@@ -56,6 +56,7 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="CategoriaAplicacao.cs" />
     <Compile Include="DbProdutoContext.cs" />
+    <Compile Include="ListaDeProduto.cs" />
     <Compile Include="Migrations\202007091443543_InitialCreate.cs" />
     <Compile Include="Migrations\202007091443543_InitialCreate.designer.cs">
       <DependentUpon>202007091443543_InitialCreate.cs</DependentUpon>
@@ -67,6 +68,10 @@
     <Compile Include="Migrations\202007131706310_RefatorandoCategoria.cs" />
     <Compile Include="Migrations\202007131706310_RefatorandoCategoria.designer.cs">
       <DependentUpon>202007131706310_RefatorandoCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007141312033_AdicionadoListaDeProdutos.cs" />
+    <Compile Include="Migrations\202007141312033_AdicionadoListaDeProdutos.designer.cs">
+      <DependentUpon>202007141312033_AdicionadoListaDeProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Produto.cs" />
@@ -87,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007131706310_RefatorandoCategoria.resx">
       <DependentUpon>202007131706310_RefatorandoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007141312033_AdicionadoListaDeProdutos.resx">
+      <DependentUpon>202007141312033_AdicionadoListaDeProdutos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

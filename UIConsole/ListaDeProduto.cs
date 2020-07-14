@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace UIConsole
 {
-    public class Categoria
+    public class ListaDeProduto
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
-
-        public virtual IEnumerable<Produto> Produtos { get; set; } //uma categorias possui vários Produtos (1 para n) : obs((Proprideda Navegação))
+        public ICollection<Produto> Produtos { get; set; } //relacionamento n para n c/ a classe Produtos
     }
 }
