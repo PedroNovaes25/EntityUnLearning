@@ -10,6 +10,12 @@ namespace UIConsole
     {
         static void Main(string[] args)
         {
+            //testes1();
+            testes2();
+        }
+
+        public static void testes1() 
+        {
             //DbProdutoContext banco = new DbProdutoContext();
             Produto produt1 = new Produto();
             Categoria cat1 = new Categoria();
@@ -36,7 +42,7 @@ namespace UIConsole
             //bancoConec.Alterar(produt1);
             //bancoConec.Excluir(produt1.Id);
             //bancoCat.Salvar(cat1);
-            bancoProd.Salvar(produt1);
+            //bancoProd.Salvar(produt1);
 
 
 
@@ -72,6 +78,32 @@ namespace UIConsole
             {
                 Console.WriteLine(item2.Id + " " + item2.Nome + " - " + item2.Categoria.Descricao);
             }
+        }
+        public static void testes2()
+        {
+            ListaDeProdutosAplicacao appLista = new ListaDeProdutosAplicacao();
+            ProdutoAplicacao appProduto = new ProdutoAplicacao();
+            //var lista01 = new ListaDeProduto();
+            var lista01 = appLista.Listar().Where(x => x.Id == 2).FirstOrDefault();
+
+
+            lista01.Descricao = "Lista Teste";
+            //lista01.Produtos = appProduto.Listar().Where(x => x.Categoria.Id == 3).ToList();
+            lista01.Produtos = appProduto.Listar().ToList();
+
+            //appLista.Alterar(lista01);
+
+            foreach (var item in appLista.Listar()) 
+            {
+                Console.WriteLine("{0} - {1}", item.Id, item.Descricao);
+                foreach (var i in item.Produtos)
+                {
+                    Console.WriteLine("   {0} - {1}",i.Id, i.Nome);
+                }
+                Console.WriteLine(" \n");
+            }
+
+            Console.ReadKey();
         }
     }
 }

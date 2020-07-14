@@ -38,7 +38,7 @@ namespace UIConsole
         public void Excluir(int id)
         {
             Produto produtoDelete = conexaoBd.Produtos.Where(x => x.Id == id).First();
-            conexaoBd.Produtos.Remove(produtoDelete);
+            conexaoBd.Set<Produto>().Remove(produtoDelete);
             conexaoBd.SaveChanges();
         }
     }
