@@ -12,10 +12,11 @@ namespace UIConsole
         static void Main(string[] args)
         {
             //testes1();
-            testes2();
+            //testes2();
+            teste3();
         }
 
-        public static void testes1() 
+        public static void testes1()
         {
             //DbProdutoContext banco = new DbProdutoContext();
             Produto produt1 = new Produto();
@@ -42,7 +43,7 @@ namespace UIConsole
             //bancoConec.Salvar(produt1);
             //bancoConec.Alterar(produt1);
             //bancoConec.Excluir(produt1.Id);
-            //bancoCat.Salvar(cat1);
+            bancoCat.Salvar(cat1);
             //bancoProd.Salvar(produt1);
 
 
@@ -94,17 +95,92 @@ namespace UIConsole
 
             //appLista.Alterar(lista01);
 
-            foreach (var item in appLista.Listar()) 
+            foreach (var item in appLista.Listar())
             {
                 Console.WriteLine("{0} - {1}", item.Id, item.Descricao);
                 foreach (var i in item.Produtos)
                 {
-                    Console.WriteLine("   {0} - {1}",i.Id, i.Nome);
+                    Console.WriteLine("   {0} - {1}", i.Id, i.Nome);
                 }
                 Console.WriteLine(" \n");
             }
 
             Console.ReadKey();
+        }
+
+        public static void teste3()
+        {
+            /// --------------
+            //Categoria
+            #region Categoria
+
+            var appCategoria = new CategoriaAplicacao();
+            var objCategoria = new Categoria
+            {
+                Descricao = "Enlatados"
+            };
+
+            //appCategoria.Salvar(objCategoria);
+
+            //foreach (var item in appCategoria.Listar())
+            //{
+            //    Console.WriteLine("{0} - {1}", item.Id, item.Descricao);
+            //    //foreach (var i in item.Produtos)
+            //    //{
+            //    //    Console.WriteLine("  {0} - {0}", i.Id, i.Nome);
+            //    //}
+            //}
+            #endregion
+            /// --------------
+            //Produto
+            #region Produto
+            var appProduto = new ProdutoAplicacao();
+            //var objProduto = new Produto
+            //{
+            //    Nome = "Sardinha",
+            //    Categoria = appCategoria.Listar().Where(x => x.Id == 2 ).First()
+            //};
+
+            ////appProduto.Salvar(objProduto);
+
+            //foreach (var item in appProduto.Listar())
+            //{
+            //    Console.WriteLine("{0} - {1}", item.Nome, item.Categoria.Descricao);
+            //}
+
+
+            #endregion
+
+            #region
+            /// --------------
+            //ListaDeProdutos
+
+            var appLista = new ListaDeProdutosAplicacao();
+            var objlistaDeProdutos = new ListaDeProduto();
+
+            objlistaDeProdutos.Descricao = "Lista de Compras do Cleyton";
+
+            var produto1 = appProduto.Listar().FirstOrDefault();
+            var produto2 = appProduto.Listar().FirstOrDefault();
+
+            objlistaDeProdutos.Produtos = new List<Produto> { produto1, produto2 }; //adicionando mais de um item na lista
+
+            //appLista.Salvar(objlistaDeProdutos);
+
+            foreach (var item in appLista.Listar())
+            {
+                Console.WriteLine("{0} ", item.Descricao);
+                foreach (var produto in item.Produtos)
+                {
+                    Console.WriteLine("   {0} - {1}", produto.Nome, produto.Categoria.Descricao);
+                }
+            }
+
+            Console.ReadKey();
+
+
+            #endregion
+
         }
     }
 }

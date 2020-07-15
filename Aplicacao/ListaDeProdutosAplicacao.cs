@@ -25,7 +25,6 @@ namespace Aplicacao
             conexaoBd.ListaDeProdutos.Add(listaDeProduto);
             conexaoBd.SaveChanges();
         }
-
         public IEnumerable<ListaDeProduto> Listar()
         {
             return conexaoBd.ListaDeProdutos
